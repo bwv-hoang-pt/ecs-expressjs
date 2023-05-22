@@ -1,13 +1,13 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-1:587426114888:task-definition/expressjs1:1",
+    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-1:587426114888:task-definition/ecs-expressjs:1",
     "containerDefinitions": [
         {
-            "name": "expressjs1",
-            "image": "587426114888.dkr.ecr.ap-southeast-2.amazonaws.com/hoangpt-expressjs:latest",
+            "name": "ecs-expressjs",
+            "image": "587426114888.dkr.ecr.ap-northeast-1.amazonaws.com/ecs-expressjs:latest",
             "cpu": 0,
             "portMappings": [
                 {
-                    "name": "expressjs1-3000-tcp",
+                    "name": "ecs-expressjs-3000-tcp",
                     "containerPort": 3000,
                     "hostPort": 3000,
                     "protocol": "tcp",
@@ -19,19 +19,10 @@
             "environmentFiles": [],
             "mountPoints": [],
             "volumesFrom": [],
-            "ulimits": [],
-            "logConfiguration": {
-                "logDriver": "awslogs",
-                "options": {
-                    "awslogs-create-group": "true",
-                    "awslogs-group": "/ecs/expressjs1",
-                    "awslogs-region": "ap-northeast-1",
-                    "awslogs-stream-prefix": "ecs"
-                }
-            }
+            "ulimits": []
         }
     ],
-    "family": "expressjs1",
+    "family": "ecs-expressjs",
     "executionRoleArn": "arn:aws:iam::587426114888:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
     "revision": 1,
@@ -39,16 +30,7 @@
     "status": "ACTIVE",
     "requiresAttributes": [
         {
-            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
-        },
-        {
-            "name": "ecs.capability.execution-role-awslogs"
-        },
-        {
             "name": "com.amazonaws.ecs.capability.ecr-auth"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
         },
         {
             "name": "ecs.capability.execution-role-ecr-pull"
@@ -61,9 +43,6 @@
         },
         {
             "name": "ecs.capability.task-eni"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
         }
     ],
     "placementConstraints": [],
@@ -83,7 +62,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2023-05-22T02:09:35.574Z",
+    "registeredAt": "2023-05-22T03:10:27.108Z",
     "registeredBy": "arn:aws:iam::587426114888:root",
     "tags": []
 }
